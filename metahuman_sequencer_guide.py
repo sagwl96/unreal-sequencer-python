@@ -57,7 +57,10 @@ unreal.LevelSequenceEditorBlueprintLibrary.refresh_current_level_sequence()
 actor.get_components_by_class(unreal.SkeletalMeshComponent)
 
 #Using the above to get "Body" skeletal component of the actor
-actor_body = actor.get_components_by_class(unreal.SkeletalMeshComponent)[2]
+actor_body = None
+for component in actor.get_components_by_class(unreal.SkeletalMeshComponent):
+	if component.get_fname() == "Body":
+		actor_body = component
 
 #Adding it to the sequence as a possessable
 component_binding = level_sequence.add_possessable(actor_body)
