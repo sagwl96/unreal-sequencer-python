@@ -236,6 +236,9 @@ for ctrl in rig_controls:
 # To get the value of the keys
 print(rig_channels[index].get_keys())
 
+# To get the default value
+print(rig_channels[index].get_default())
+
 # To add a key
 # add_key takes two parameters, first is the frame number denoted by unreal.FrameNumber(value), and second is the value itself
 rig_channels[index].add_key(unreal.FrameNumber(0),1)
