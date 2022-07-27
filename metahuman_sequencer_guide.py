@@ -254,7 +254,9 @@ for i in range(end_frame):
 
 
 
-
+# MEDIAPIPE AND OPENCV CODE TO DETECT POSE IN A VIDEO
+import cv2 as cv
+import mediapipe as mp
 
 
 
