@@ -243,13 +243,14 @@ print(rig_channels[index].get_default())
 # add_key takes two parameters, first is the frame number denoted by unreal.FrameNumber(value), and second is the value itself
 rig_channels[index].add_key(unreal.FrameNumber(0),1)
 
-# KEYING ALL THE FRAMES
+# KEYING ALL THE FRAMES WITH DEFAULT VALUES
 # Get level sequence start and end frame
 start_frame = level_sequence.get_playback_start()
 end_frame = level_sequence.get_playback_end()
 
 for i in range(end_frame):
-	rig_channels[index].add_key(unreal.FrameNumber(i),1)
+	for index in list(rig_index_dict.values()):
+		rig_channels[index].add_key(unreal.FrameNumber(i),rig_channels[index].get_default())
 
 
 
